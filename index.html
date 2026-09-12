@@ -73,143 +73,153 @@
           </button>
         </header>
 
-        <!-- 1. TETHER -->
-        <section class="card card-primary" aria-labelledby="tetherTitle">
-          <div class="card-top">
-            <div class="asset">
-              <span class="asset-badge badge-teal" aria-hidden="true">₮</span>
-              <div>
-                <h2 id="tetherTitle">تتر (USDT)</h2>
-                <p class="asset-sub">بازار تتر/ریال نوبیتکس</p>
+        <section class="app-box-container">
+          <!-- 1. TETHER -->
+          <section class="card card-primary" aria-labelledby="tetherTitle">
+            <div class="card-top">
+              <div class="asset">
+                <span class="asset-badge badge-teal" aria-hidden="true">₮</span>
+                <div>
+                  <h2 id="tetherTitle">تتر (USDT)</h2>
+                  <p class="asset-sub">بازار تتر/ریال نوبیتکس</p>
+                </div>
+              </div>
+              <span class="chip" id="tetherChange" aria-live="off">—</span>
+            </div>
+            <div class="price-row">
+              <span class="price" id="tetherPrice">در حال دریافت</span>
+              <span class="unit">تومان</span>
+            </div>
+            <div class="meta-grid">
+              <div class="meta">
+                <span>کمترین امروز</span><b id="tetherLow">—</b>
+              </div>
+              <div class="meta">
+                <span>بیشترین امروز</span><b id="tetherHigh">—</b>
               </div>
             </div>
-            <span class="chip" id="tetherChange" aria-live="off">—</span>
-          </div>
-          <div class="price-row">
-            <span class="price" id="tetherPrice">در حال دریافت</span>
-            <span class="unit">تومان</span>
-          </div>
-          <div class="meta-grid">
-            <div class="meta">
-              <span>کمترین امروز</span><b id="tetherLow">—</b>
-            </div>
-            <div class="meta">
-              <span>بیشترین امروز</span><b id="tetherHigh">—</b>
-            </div>
-          </div>
-          <p class="stamp" id="tetherStamp">وضعیت: در حال دریافت اطلاعات</p>
-        </section>
+            <p class="stamp" id="tetherStamp">وضعیت: در حال دریافت اطلاعات</p>
+          </section>
 
-        <!-- 2. DOLLAR -->
-        <section class="card" aria-labelledby="dollarTitle">
-          <div class="card-top">
-            <div class="asset">
-              <span class="asset-badge badge-gold" aria-hidden="true">$</span>
-              <div>
-                <h2 id="dollarTitle">دلار آمریکا</h2>
-                <p class="asset-sub">بازار آزاد، گزارش tgju</p>
+          <!-- 2. DOLLAR -->
+          <section class="card" aria-labelledby="dollarTitle">
+            <div class="card-top">
+              <div class="asset">
+                <span class="asset-badge badge-gold" aria-hidden="true">$</span>
+                <div>
+                  <h2 id="dollarTitle">دلار آمریکا</h2>
+                  <p class="asset-sub">بازار آزاد، گزارش tgju</p>
+                </div>
+              </div>
+              <span class="chip" id="dollarChange">—</span>
+            </div>
+            <div class="price-row">
+              <span class="price" id="dollarPrice">در حال دریافت</span>
+              <span class="unit">تومان</span>
+            </div>
+            <div class="meta-grid">
+              <div class="meta">
+                <span>کمترین روز</span><b id="dollarLow">—</b>
+              </div>
+              <div class="meta">
+                <span>بیشترین روز</span><b id="dollarHigh">—</b>
               </div>
             </div>
-            <span class="chip" id="dollarChange">—</span>
-          </div>
-          <div class="price-row">
-            <span class="price" id="dollarPrice">در حال دریافت</span>
-            <span class="unit">تومان</span>
-          </div>
-          <div class="meta-grid">
-            <div class="meta">
-              <span>کمترین روز</span><b id="dollarLow">—</b>
-            </div>
-            <div class="meta">
-              <span>بیشترین روز</span><b id="dollarHigh">—</b>
-            </div>
-          </div>
-          <p class="stamp" id="dollarStamp">وضعیت: در حال دریافت اطلاعات</p>
-        </section>
+            <p class="stamp" id="dollarStamp">وضعیت: در حال دریافت اطلاعات</p>
+          </section>
 
-        <!-- 3. 15-DAY TETHER TREND -->
-        <section class="card" aria-labelledby="trendTitle">
-          <div class="card-top">
-            <div>
-              <h2 id="trendTitle">روند پانزده روز اخیر تتر</h2>
-              <p class="asset-sub">نرخ پایانی هر روز، منبع tgju</p>
+          <!-- 3. 15-DAY TETHER TREND -->
+          <section class="card" aria-labelledby="trendTitle">
+            <div class="card-top">
+              <div>
+                <h2 id="trendTitle">روند پانزده روز اخیر تتر</h2>
+                <p class="asset-sub">نرخ پایانی هر روز، منبع tgju</p>
+              </div>
+              <span class="chip" id="trendChange">—</span>
             </div>
-            <span class="chip" id="trendChange">—</span>
-          </div>
-          <div class="chart-wrap">
-            <div
-              id="chart"
-              role="img"
-              aria-label="نمودار روند پانزده روزه نرخ تتر"
-            ></div>
-            <p class="chart-empty" id="chartEmpty">
-              در حال دریافت اطلاعات نمودار
-            </p>
-          </div>
-          <div class="meta-grid">
-            <div class="meta"><span>کف بازه</span><b id="trendMin">—</b></div>
-            <div class="meta"><span>سقف بازه</span><b id="trendMax">—</b></div>
-          </div>
-          <p class="stamp" id="trendStamp">وضعیت: در حال دریافت اطلاعات</p>
-        </section>
-
-        <!-- 4. CONVERTER -->
-        <section class="card card-convert" aria-labelledby="convTitle">
-          <h2 id="convTitle">تبدیل تتر به تومان</h2>
-          <p class="asset-sub">محاسبه بر پایه نرخ لحظه ای تتر</p>
-
-          <div class="field">
-            <label for="usdtInput">مقدار تتر</label>
-            <div class="input-wrap">
-              <input
-                id="usdtInput"
-                type="text"
-                inputmode="decimal"
-                placeholder="۰"
-                autocomplete="off"
-                dir="ltr"
-              />
-              <span class="suffix">USDT</span>
+            <div class="chart-wrap">
+              <div
+                id="chart"
+                role="img"
+                aria-label="نمودار روند پانزده روزه نرخ تتر"
+              ></div>
+              <p class="chart-empty" id="chartEmpty">
+                در حال دریافت اطلاعات نمودار
+              </p>
             </div>
-          </div>
+            <div class="meta-grid">
+              <div class="meta"><span>کف بازه</span><b id="trendMin">—</b></div>
+              <div class="meta">
+                <span>سقف بازه</span><b id="trendMax">—</b>
+              </div>
+            </div>
+            <p class="stamp" id="trendStamp">وضعیت: در حال دریافت اطلاعات</p>
+          </section>
 
-          <div class="conv-divider" aria-hidden="true">
-            <span class="conv-divider-line"></span>
-            <span class="conv-divider-icon">
-              <svg viewBox="0 0 24 24" focusable="false">
-                <path
-                  d="M7 7h9l-3-3 1.4-1.4L19.8 8l-5.4 5.4L13 12l3-3H7zM17 17H8l3 3-1.4 1.4L4.2 16l5.4-5.4L11 12l-3 3h9z"
-                  fill="currentColor"
+          <!-- 4. CONVERTER -->
+          <section class="card card-convert" aria-labelledby="convTitle">
+            <h2 id="convTitle">تبدیل تتر به تومان</h2>
+            <p class="asset-sub">محاسبه بر پایه نرخ لحظه ای تتر</p>
+
+            <div class="field">
+              <label for="usdtInput">مقدار تتر</label>
+              <div class="input-wrap">
+                <input
+                  id="usdtInput"
+                  type="text"
+                  inputmode="decimal"
+                  placeholder="۰"
+                  autocomplete="off"
+                  dir="ltr"
                 />
-              </svg>
-            </span>
-            <span class="conv-divider-line"></span>
-          </div>
-
-          <div class="field">
-            <label for="tomanInput">معادل تومان</label>
-            <div class="input-wrap">
-              <input
-                id="tomanInput"
-                type="text"
-                inputmode="numeric"
-                placeholder="۰"
-                autocomplete="off"
-                dir="ltr"
-              />
-              <span class="suffix">تومان</span>
+                <span class="suffix">USDT</span>
+              </div>
             </div>
-          </div>
 
-          <div class="quick-row" role="group" aria-label="مقادیر پیشنهادی تتر">
-            <button class="quick" type="button" data-usdt="10">۱۰ تتر</button>
-            <button class="quick" type="button" data-usdt="50">۵۰ تتر</button>
-            <button class="quick" type="button" data-usdt="100">۱۰۰ تتر</button>
-          </div>
+            <div class="conv-divider" aria-hidden="true">
+              <span class="conv-divider-line"></span>
+              <span class="conv-divider-icon">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path
+                    d="M7 7h9l-3-3 1.4-1.4L19.8 8l-5.4 5.4L13 12l3-3H7zM17 17H8l3 3-1.4 1.4L4.2 16l5.4-5.4L11 12l-3 3h9z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+              <span class="conv-divider-line"></span>
+            </div>
 
-          <p class="stamp" id="convStamp">
-            برای محاسبه، ابتدا نرخ تتر باید دریافت شود.
-          </p>
+            <div class="field">
+              <label for="tomanInput">معادل تومان</label>
+              <div class="input-wrap">
+                <input
+                  id="tomanInput"
+                  type="text"
+                  inputmode="numeric"
+                  placeholder="۰"
+                  autocomplete="off"
+                  dir="ltr"
+                />
+                <span class="suffix">تومان</span>
+              </div>
+            </div>
+
+            <div
+              class="quick-row"
+              role="group"
+              aria-label="مقادیر پیشنهادی تتر"
+            >
+              <button class="quick" type="button" data-usdt="10">۱۰ تتر</button>
+              <button class="quick" type="button" data-usdt="50">۵۰ تتر</button>
+              <button class="quick" type="button" data-usdt="100">
+                ۱۰۰ تتر
+              </button>
+            </div>
+
+            <p class="stamp" id="convStamp">
+              برای محاسبه، ابتدا نرخ تتر باید دریافت شود.
+            </p>
+          </section>
         </section>
 
         <p class="disclaimer">

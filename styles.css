@@ -51,6 +51,13 @@
 * {
   box-sizing: border-box;
 }
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  scrollbar-width: none;
+}
 html,
 body {
   margin: 0;
@@ -95,6 +102,12 @@ body {
   flex-direction: column;
   gap: var(--s2);
   -webkit-overflow-scrolling: touch;
+}
+
+.app-box-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
 }
 
 .footer-space {
@@ -612,17 +625,19 @@ body {
 /* ---------- desktop mockup ---------- */
 @media (min-width: 768px) {
   body {
-    display: grid;
-    place-items: center;
-    padding: var(--s3) 0;
+    display: flex;
+    justify-content: center;
   }
+
+
   .app-container {
-    max-width: 430px;
-    height: min(920px, calc(100dvh - 48px));
-    border-radius: 38px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6);
-    overflow: hidden;
+    max-width: 1400px;
+    background: transparent;
+  }
+
+  .app-box-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
   .install-sheet {
     max-width: 430px;

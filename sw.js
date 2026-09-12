@@ -1,4 +1,4 @@
-/* تترلــند — service worker */
+/* تتریــنو — service worker */
 const CACHE = 'nabz-toman-shell-v1';
 
 const SHELL = [
