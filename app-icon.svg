@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Nabz Toman">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e2030"/>
+      <stop offset="1" stop-color="#08101e"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <circle cx="256" cy="266" r="126" fill="none" stroke="#26c6a6" stroke-width="38"/>
+  <g fill="none" stroke="#08101e" stroke-width="78" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M144 333 L237 240 L289 288 L382 165"/>
+  </g>
+  <g fill="none" stroke="#f2b544" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M144 333 L237 240 L289 288 L378 170"/>
+  </g>
+  <path d="M423 133 L337 146 L410 219 Z" fill="#f2b544"/>
+</svg>

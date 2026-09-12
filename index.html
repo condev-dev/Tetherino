@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>تتریــنو | نرخ زنده تتر و دلار</title>
+    <meta
+      name="description"
+      content="نمایش نرخ لحظه ای تتر و دلار به تومان، روند پانزده روزه تتر و تبدیل دوطرفه تتر و تومان."
+    />
+    <meta name="theme-color" content="#0e2030" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="تتریــنو" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="app-scroll" id="appScroll">
+        <header class="app-header">
+          <div class="brand">
+            <img
+              src="./app-icon.svg"
+              alt=""
+              class="brand-icon"
+              width="44"
+              height="44"
+            />
+            <div class="brand-text">
+              <h1>تتریــــنو</h1>
+              <p>نرخ لحظه ای تتر و دلار</p>
+            </div>
+          </div>
+          <button
+            id="refreshBtn"
+            class="icon-btn"
+            type="button"
+            aria-label="به روزرسانی نرخ ها"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 5V2L7 6l5 4V7c3.31 0 6 2.69 6 6a6 6 0 0 1-6 6 6 6 0 0 1-6-6H4a8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8z"
+              />
+            </svg>
+          </button>
+        </header>
+
+        <!-- 1. TETHER -->
+        <section class="card card-primary" aria-labelledby="tetherTitle">
+          <div class="card-top">
+            <div class="asset">
+              <span class="asset-badge badge-teal" aria-hidden="true">₮</span>
+              <div>
+                <h2 id="tetherTitle">تتر (USDT)</h2>
+                <p class="asset-sub">بازار تتر/ریال نوبیتکس</p>
+              </div>
+            </div>
+            <span class="chip" id="tetherChange" aria-live="off">—</span>
+          </div>
+          <div class="price-row">
+            <span class="price" id="tetherPrice">در حال دریافت</span>
+            <span class="unit">تومان</span>
+          </div>
+          <div class="meta-grid">
+            <div class="meta">
+              <span>کمترین امروز</span><b id="tetherLow">—</b>
+            </div>
+            <div class="meta">
+              <span>بیشترین امروز</span><b id="tetherHigh">—</b>
+            </div>
+          </div>
+          <p class="stamp" id="tetherStamp">وضعیت: در حال دریافت اطلاعات</p>
+        </section>
+
+        <!-- 2. DOLLAR -->
+        <section class="card" aria-labelledby="dollarTitle">
+          <div class="card-top">
+            <div class="asset">
+              <span class="asset-badge badge-gold" aria-hidden="true">$</span>
+              <div>
+                <h2 id="dollarTitle">دلار آمریکا</h2>
+                <p class="asset-sub">بازار آزاد، گزارش tgju</p>
+              </div>
+            </div>
+            <span class="chip" id="dollarChange">—</span>
+          </div>
+          <div class="price-row">
+            <span class="price" id="dollarPrice">در حال دریافت</span>
+            <span class="unit">تومان</span>
+          </div>
+          <div class="meta-grid">
+            <div class="meta">
+              <span>کمترین روز</span><b id="dollarLow">—</b>
+            </div>
+            <div class="meta">
+              <span>بیشترین روز</span><b id="dollarHigh">—</b>
+            </div>
+          </div>
+          <p class="stamp" id="dollarStamp">وضعیت: در حال دریافت اطلاعات</p>
+        </section>
+
+        <!-- 3. 15-DAY TETHER TREND -->
+        <section class="card" aria-labelledby="trendTitle">
+          <div class="card-top">
+            <div>
+              <h2 id="trendTitle">روند پانزده روز اخیر تتر</h2>
+              <p class="asset-sub">نرخ پایانی هر روز، منبع tgju</p>
+            </div>
+            <span class="chip" id="trendChange">—</span>
+          </div>
+          <div class="chart-wrap">
+            <div
+              id="chart"
+              role="img"
+              aria-label="نمودار روند پانزده روزه نرخ تتر"
+            ></div>
+            <p class="chart-empty" id="chartEmpty">
+              در حال دریافت اطلاعات نمودار
+            </p>
+          </div>
+          <div class="meta-grid">
+            <div class="meta"><span>کف بازه</span><b id="trendMin">—</b></div>
+            <div class="meta"><span>سقف بازه</span><b id="trendMax">—</b></div>
+          </div>
+          <p class="stamp" id="trendStamp">وضعیت: در حال دریافت اطلاعات</p>
+        </section>
+
+        <!-- 4. CONVERTER -->
+        <section class="card card-convert" aria-labelledby="convTitle">
+          <h2 id="convTitle">تبدیل تتر به تومان</h2>
+          <p class="asset-sub">محاسبه بر پایه نرخ لحظه ای تتر</p>
+
+          <div class="field">
+            <label for="usdtInput">مقدار تتر</label>
+            <div class="input-wrap">
+              <input
+                id="usdtInput"
+                type="text"
+                inputmode="decimal"
+                placeholder="۰"
+                autocomplete="off"
+                dir="ltr"
+              />
+              <span class="suffix">USDT</span>
+            </div>
+          </div>
+
+          <div class="conv-divider" aria-hidden="true">
+            <span class="conv-divider-line"></span>
+            <span class="conv-divider-icon">
+              <svg viewBox="0 0 24 24" focusable="false">
+                <path
+                  d="M7 7h9l-3-3 1.4-1.4L19.8 8l-5.4 5.4L13 12l3-3H7zM17 17H8l3 3-1.4 1.4L4.2 16l5.4-5.4L11 12l-3 3h9z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span class="conv-divider-line"></span>
+          </div>
+
+          <div class="field">
+            <label for="tomanInput">معادل تومان</label>
+            <div class="input-wrap">
+              <input
+                id="tomanInput"
+                type="text"
+                inputmode="numeric"
+                placeholder="۰"
+                autocomplete="off"
+                dir="ltr"
+              />
+              <span class="suffix">تومان</span>
+            </div>
+          </div>
+
+          <div class="quick-row" role="group" aria-label="مقادیر پیشنهادی تتر">
+            <button class="quick" type="button" data-usdt="10">۱۰ تتر</button>
+            <button class="quick" type="button" data-usdt="50">۵۰ تتر</button>
+            <button class="quick" type="button" data-usdt="100">۱۰۰ تتر</button>
+          </div>
+
+          <p class="stamp" id="convStamp">
+            برای محاسبه، ابتدا نرخ تتر باید دریافت شود.
+          </p>
+        </section>
+
+        <p class="disclaimer">
+          نرخ ها از منابع عمومی دریافت می شود و جنبه اطلاع رسانی دارد.
+        </p>
+
+        <div class="footer-space" aria-hidden="true"></div>
+      </div>
+
+      <div class="dual-footer">
+        <a
+          href="https://www.instagram.com/con.dev/"
+          target="_blank"
+          class="brand-link"
+        >
+          <span>Con Dev</span>
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+            /></svg
+        ></a>
+        <a
+          href="https://www.instagram.com/top_coode/"
+          target="_blank"
+          class="brand-link"
+        >
+          <span>Top Coode</span>
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+            /></svg
+        ></a>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <div id="updateBar" class="update-bar" hidden>
+      <span>نسخه تازه ای آماده است.</span>
+      <button id="updateBtn" type="button">به روزرسانی</button>
+    </div>
+
+    <dialog
+      id="installSheet"
+      class="install-sheet"
+      aria-labelledby="sheetTitle"
+    >
+      <div class="sheet-inner">
+        <img
+          src="./app-icon.svg"
+          alt=""
+          class="sheet-icon"
+          width="64"
+          height="64"
+        />
+        <h2 id="sheetTitle">نصب تتریــنو</h2>
+        <p id="sheetCopy">
+          عامو نصبش کن که همیشه دم دستت باشه، کی حوصله داره هر دفعه دنبال لینک
+          بگرده؟
+        </p>
+        <ol id="sheetSteps" class="sheet-steps" hidden></ol>
+        <div class="sheet-actions">
+          <button id="sheetPrimary" class="btn-primary" type="button">
+            نصب اپلیکیشن
+          </button>
+          <button id="sheetSecondary" class="btn-ghost" type="button">
+            فعلا نه
+          </button>
+        </div>
+      </div>
+    </dialog>
+
+    <button id="installFab" class="install-fab" type="button" hidden>
+      نصب اپلیکیشن
+    </button>
+
+    <script src="./vendor/gsap.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="./pwa.js"></script>
+  </body>
+</html>

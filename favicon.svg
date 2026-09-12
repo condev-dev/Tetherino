@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Nabz Toman">
+  <rect width="512" height="512" rx="96" fill="#0b1a29"/>
+  <circle cx="256" cy="266" r="124" fill="none" stroke="#26c6a6" stroke-width="50"/>
+  <path d="M132 341 L237 236 L289 288 L376 172" fill="none" stroke="#0b1a29" stroke-width="94" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M132 341 L237 236 L289 288 L372 176" fill="none" stroke="#f2b544" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M430 124 L330 140 L414 224 Z" fill="#f2b544"/>
+</svg>

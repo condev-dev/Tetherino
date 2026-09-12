@@ -1,0 +1,11 @@
+GSAP 3.12.5 (core)
+https://gsap.com
+
+Copyright 2024, GreenSock. All rights reserved.
+
+This project ships the free GSAP core (vendor/gsap.min.js) unmodified.
+Use is subject to the GSAP Standard "No Charge" License:
+https://gsap.com/standard-license
+
+Only the free core is bundled here. No Club GSAP / bonus plugins are included.
+The full license text is published by GreenSock at the URL above.
